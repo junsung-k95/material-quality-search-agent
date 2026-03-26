@@ -10,5 +10,10 @@ class Settings(BaseSettings):
     chroma_path: str = "data/chroma"
     top_k: int = 5
 
+    @property
+    def demo_mode(self) -> bool:
+        """True when ANTHROPIC_API_KEY is not configured. Pipeline runs with deterministic fallbacks."""
+        return not bool(self.anthropic_api_key)
+
 
 settings = Settings()

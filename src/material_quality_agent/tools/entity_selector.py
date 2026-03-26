@@ -30,6 +30,15 @@ async def select_entity(query: str, candidates: list[dict]) -> dict:
     if not candidates:
         return {"selected_component": "", "reason": "후보 부품이 없습니다."}
 
+    if settings.demo_mode:
+        best = max(candidates, key=lambda c: c["score"])
+        reason = (
+            f"벡터 유사도 최고 점수({best['score']:.2f}) 부품으로 자동 선택되었습니다. "
+            f"(데모 모드 — ANTHROPIC_API_KEY 미설정)"
+        )
+        logger.info("demo_mode entity selection: %s → %s", query, best["name"])
+        return {"selected_component": best["name"], "reason": reason}
+
     candidate_text = "\n".join(
         [f"- {c['name']} (유사도: {c['score']:.2f})" for c in candidates]
     )
