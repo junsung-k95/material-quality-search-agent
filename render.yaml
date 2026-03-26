@@ -1,8 +1,12 @@
 ## Render deployment configuration
 ## Docs: https://render.com/docs/infrastructure-as-code
+##
+## UI는 Streamlit Community Cloud에 별도 배포합니다.
+## → https://share.streamlit.io  /  앱 파일: ui/app.py
+## → 환경변수 API_BASE_URL 을 이 서비스의 URL로 설정하세요.
 
 services:
-  # ── FastAPI backend ───────────────────────────────────────────────────────
+  # ── FastAPI backend (API only — UI is on Streamlit Community Cloud) ───────
   - type: web
     name: material-quality-api
     runtime: docker
@@ -12,7 +16,7 @@ services:
     healthCheckPath: /health
     envVars:
       - key: ANTHROPIC_API_KEY
-        sync: false            # Set this in the Render dashboard
+        sync: false            # Render 대시보드에서 직접 입력
       - key: ANTHROPIC_MODEL
         value: claude-sonnet-4-6
       - key: HF_HOME
@@ -21,17 +25,3 @@ services:
         value: data/issues.db
       - key: CHROMA_PATH
         value: data/chroma
-
-  # ── Streamlit UI ──────────────────────────────────────────────────────────
-  - type: web
-    name: material-quality-ui
-    runtime: docker
-    dockerfilePath: ./Dockerfile
-    dockerContext: .
-    dockerCommand: sh scripts/start_ui.sh
-    envVars:
-      - key: API_BASE_URL
-        sync: false            # Set this to the API service URL after deploying
-                               # e.g. https://material-quality-api.onrender.com
-      - key: HF_HOME
-        value: /app/.cache/huggingface
