@@ -1,3 +1,7 @@
+[build-system]
+requires = ["setuptools>=70"]
+build-backend = "setuptools.build_meta"
+
 [project]
 name = "material-quality-agent"
 version = "0.1.0"
@@ -40,3 +44,6 @@ select = ["E", "F", "I"]
 python_version = "3.11"
 strict = false
 ignore_missing_imports = true
+
+[tool.setuptools.packages.find]
+where = ["src"]
