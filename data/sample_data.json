@@ -1,0 +1,311 @@
+{
+  "components": [
+    {"id": "comp-001", "name": "대시보드 커버", "product": "자동차 내장재"},
+    {"id": "comp-002", "name": "도어 트림 패널", "product": "자동차 내장재"},
+    {"id": "comp-003", "name": "센터 콘솔 커버", "product": "자동차 내장재"},
+    {"id": "comp-004", "name": "시트 커버", "product": "자동차 내장재"},
+    {"id": "comp-005", "name": "헤드라이너", "product": "자동차 내장재"},
+    {"id": "comp-006", "name": "필러 트림", "product": "자동차 내장재"},
+    {"id": "comp-007", "name": "글로브 박스", "product": "자동차 내장재"},
+    {"id": "comp-008", "name": "카펫 매트", "product": "자동차 내장재"}
+  ],
+  "issues": [
+    {
+      "id": "issue-001",
+      "product": "자동차 내장재",
+      "component": "대시보드 커버",
+      "issue": "표면 기포 발생",
+      "cause": "수분 과다 흡수",
+      "solution": "건조 공정 온도 및 시간 최적화",
+      "material_code": "MAT-PL-00123",
+      "material_class": "플라스틱 수지",
+      "class_hierarchy": "원자재 > 플라스틱 > 플라스틱 수지"
+    },
+    {
+      "id": "issue-002",
+      "product": "자동차 내장재",
+      "component": "대시보드 커버",
+      "issue": "표면 변색",
+      "cause": "UV 노출 과다 및 열화",
+      "solution": "UV 안정제 첨가 및 코팅 처리",
+      "material_code": "MAT-PL-00124",
+      "material_class": "플라스틱 수지",
+      "class_hierarchy": "원자재 > 플라스틱 > 플라스틱 수지"
+    },
+    {
+      "id": "issue-003",
+      "product": "자동차 내장재",
+      "component": "대시보드 커버",
+      "issue": "균열 발생",
+      "cause": "저온 취성 및 충격",
+      "solution": "충격 보강재 혼합 및 설계 변경",
+      "material_code": "MAT-PL-00125",
+      "material_class": "플라스틱 수지",
+      "class_hierarchy": "원자재 > 플라스틱 > 플라스틱 수지"
+    },
+    {
+      "id": "issue-004",
+      "product": "자동차 내장재",
+      "component": "대시보드 커버",
+      "issue": "냄새 문제",
+      "cause": "잔류 용제 및 가소제 휘발",
+      "solution": "저 VOC 원료 사용 및 에이징 공정 강화",
+      "material_code": "MAT-PL-00126",
+      "material_class": "플라스틱 수지",
+      "class_hierarchy": "원자재 > 플라스틱 > 플라스틱 수지"
+    },
+    {
+      "id": "issue-005",
+      "product": "자동차 내장재",
+      "component": "도어 트림 패널",
+      "issue": "박리 현상",
+      "cause": "접착제 불량 및 온도 변화",
+      "solution": "접착제 종류 변경 및 도포량 조정",
+      "material_code": "MAT-FB-00201",
+      "material_class": "섬유 기반 소재",
+      "class_hierarchy": "원자재 > 섬유 > 섬유 기반 소재"
+    },
+    {
+      "id": "issue-006",
+      "product": "자동차 내장재",
+      "component": "도어 트림 패널",
+      "issue": "이음새 벌어짐",
+      "cause": "조립 공차 불량",
+      "solution": "조립 지그 재설계 및 공차 관리 강화",
+      "material_code": "MAT-FB-00202",
+      "material_class": "섬유 기반 소재",
+      "class_hierarchy": "원자재 > 섬유 > 섬유 기반 소재"
+    },
+    {
+      "id": "issue-007",
+      "product": "자동차 내장재",
+      "component": "도어 트림 패널",
+      "issue": "표면 긁힘",
+      "cause": "조립 과정 중 기구와의 마찰",
+      "solution": "조립 공정 보호 필름 적용",
+      "material_code": "MAT-FB-00203",
+      "material_class": "섬유 기반 소재",
+      "class_hierarchy": "원자재 > 섬유 > 섬유 기반 소재"
+    },
+    {
+      "id": "issue-008",
+      "product": "자동차 내장재",
+      "component": "도어 트림 패널",
+      "issue": "변색 발생",
+      "cause": "땀이나 세정제 접촉",
+      "solution": "표면 보호 코팅 강화",
+      "material_code": "MAT-FB-00204",
+      "material_class": "섬유 기반 소재",
+      "class_hierarchy": "원자재 > 섬유 > 섬유 기반 소재"
+    },
+    {
+      "id": "issue-009",
+      "product": "자동차 내장재",
+      "component": "센터 콘솔 커버",
+      "issue": "치수 불량",
+      "cause": "금형 수축률 오차",
+      "solution": "금형 수정 및 사출 조건 최적화",
+      "material_code": "MAT-PL-00301",
+      "material_class": "플라스틱 수지",
+      "class_hierarchy": "원자재 > 플라스틱 > 플라스틱 수지"
+    },
+    {
+      "id": "issue-010",
+      "product": "자동차 내장재",
+      "component": "센터 콘솔 커버",
+      "issue": "표면 기포 발생",
+      "cause": "수분 함유 원료 사용",
+      "solution": "원료 건조 공정 강화",
+      "material_code": "MAT-PL-00302",
+      "material_class": "플라스틱 수지",
+      "class_hierarchy": "원자재 > 플라스틱 > 플라스틱 수지"
+    },
+    {
+      "id": "issue-011",
+      "product": "자동차 내장재",
+      "component": "센터 콘솔 커버",
+      "issue": "광택 불균일",
+      "cause": "사출 속도 불균일",
+      "solution": "사출 속도 및 압력 프로파일 최적화",
+      "material_code": "MAT-PL-00303",
+      "material_class": "플라스틱 수지",
+      "class_hierarchy": "원자재 > 플라스틱 > 플라스틱 수지"
+    },
+    {
+      "id": "issue-012",
+      "product": "자동차 내장재",
+      "component": "시트 커버",
+      "issue": "봉제 불량",
+      "cause": "실 장력 조정 불량",
+      "solution": "봉제기 장력 재조정 및 작업자 교육",
+      "material_code": "MAT-TX-00401",
+      "material_class": "텍스타일",
+      "class_hierarchy": "원자재 > 섬유 > 텍스타일"
+    },
+    {
+      "id": "issue-013",
+      "product": "자동차 내장재",
+      "component": "시트 커버",
+      "issue": "색상 불균일",
+      "cause": "염색 공정 불균일",
+      "solution": "염색 온도 및 시간 표준화",
+      "material_code": "MAT-TX-00402",
+      "material_class": "텍스타일",
+      "class_hierarchy": "원자재 > 섬유 > 텍스타일"
+    },
+    {
+      "id": "issue-014",
+      "product": "자동차 내장재",
+      "component": "시트 커버",
+      "issue": "강도 불량",
+      "cause": "원단 인장 강도 미달",
+      "solution": "고강도 원단으로 대체 및 입고 검사 강화",
+      "material_code": "MAT-TX-00403",
+      "material_class": "텍스타일",
+      "class_hierarchy": "원자재 > 섬유 > 텍스타일"
+    },
+    {
+      "id": "issue-015",
+      "product": "자동차 내장재",
+      "component": "시트 커버",
+      "issue": "냄새 문제",
+      "cause": "염색제 잔류 성분",
+      "solution": "수세 공정 강화 및 에이징 처리",
+      "material_code": "MAT-TX-00404",
+      "material_class": "텍스타일",
+      "class_hierarchy": "원자재 > 섬유 > 텍스타일"
+    },
+    {
+      "id": "issue-016",
+      "product": "자동차 내장재",
+      "component": "헤드라이너",
+      "issue": "처짐 발생",
+      "cause": "접착제 내열성 부족",
+      "solution": "고내열 접착제로 교체",
+      "material_code": "MAT-FB-00501",
+      "material_class": "발포 소재",
+      "class_hierarchy": "원자재 > 발포재 > 발포 소재"
+    },
+    {
+      "id": "issue-017",
+      "product": "자동차 내장재",
+      "component": "헤드라이너",
+      "issue": "박리 현상",
+      "cause": "기재와 표피재 간 접착력 저하",
+      "solution": "접착 공정 온도 및 압력 재설정",
+      "material_code": "MAT-FB-00502",
+      "material_class": "발포 소재",
+      "class_hierarchy": "원자재 > 발포재 > 발포 소재"
+    },
+    {
+      "id": "issue-018",
+      "product": "자동차 내장재",
+      "component": "헤드라이너",
+      "issue": "소음 발생",
+      "cause": "패널 고정 불량",
+      "solution": "클립 체결 토크 재정의 및 설계 변경",
+      "material_code": "MAT-FB-00503",
+      "material_class": "발포 소재",
+      "class_hierarchy": "원자재 > 발포재 > 발포 소재"
+    },
+    {
+      "id": "issue-019",
+      "product": "자동차 내장재",
+      "component": "필러 트림",
+      "issue": "표면 긁힘",
+      "cause": "자재 경도 부족",
+      "solution": "고경도 표면재 적용",
+      "material_code": "MAT-PL-00601",
+      "material_class": "플라스틱 수지",
+      "class_hierarchy": "원자재 > 플라스틱 > 플라스틱 수지"
+    },
+    {
+      "id": "issue-020",
+      "product": "자동차 내장재",
+      "component": "필러 트림",
+      "issue": "치수 불량",
+      "cause": "성형 수축 관리 미흡",
+      "solution": "냉각 시간 연장 및 금형 온도 조정",
+      "material_code": "MAT-PL-00602",
+      "material_class": "플라스틱 수지",
+      "class_hierarchy": "원자재 > 플라스틱 > 플라스틱 수지"
+    },
+    {
+      "id": "issue-021",
+      "product": "자동차 내장재",
+      "component": "필러 트림",
+      "issue": "균열 발생",
+      "cause": "잔류 응력 과다",
+      "solution": "어닐링 처리 및 원료 변경",
+      "material_code": "MAT-PL-00603",
+      "material_class": "플라스틱 수지",
+      "class_hierarchy": "원자재 > 플라스틱 > 플라스틱 수지"
+    },
+    {
+      "id": "issue-022",
+      "product": "자동차 내장재",
+      "component": "글로브 박스",
+      "issue": "힌지 파손",
+      "cause": "반복 하중에 의한 피로 파괴",
+      "solution": "힌지 두께 증가 및 보강 리브 설계",
+      "material_code": "MAT-PL-00701",
+      "material_class": "플라스틱 수지",
+      "class_hierarchy": "원자재 > 플라스틱 > 플라스틱 수지"
+    },
+    {
+      "id": "issue-023",
+      "product": "자동차 내장재",
+      "component": "글로브 박스",
+      "issue": "조립 불량",
+      "cause": "부품 간 공차 누적",
+      "solution": "공차 재설계 및 조립 순서 변경",
+      "material_code": "MAT-PL-00702",
+      "material_class": "플라스틱 수지",
+      "class_hierarchy": "원자재 > 플라스틱 > 플라스틱 수지"
+    },
+    {
+      "id": "issue-024",
+      "product": "자동차 내장재",
+      "component": "글로브 박스",
+      "issue": "변색 발생",
+      "cause": "고온 환경 노출",
+      "solution": "내열성 원료 선정 및 배합 변경",
+      "material_code": "MAT-PL-00703",
+      "material_class": "플라스틱 수지",
+      "class_hierarchy": "원자재 > 플라스틱 > 플라스틱 수지"
+    },
+    {
+      "id": "issue-025",
+      "product": "자동차 내장재",
+      "component": "카펫 매트",
+      "issue": "오염 제거 불량",
+      "cause": "표면 발수 처리 부족",
+      "solution": "발수 코팅 처리 강화",
+      "material_code": "MAT-TX-00801",
+      "material_class": "텍스타일",
+      "class_hierarchy": "원자재 > 섬유 > 텍스타일"
+    },
+    {
+      "id": "issue-026",
+      "product": "자동차 내장재",
+      "component": "카펫 매트",
+      "issue": "강도 불량",
+      "cause": "파일 밀도 미달",
+      "solution": "파일 밀도 규격 강화 및 검사 강화",
+      "material_code": "MAT-TX-00802",
+      "material_class": "텍스타일",
+      "class_hierarchy": "원자재 > 섬유 > 텍스타일"
+    },
+    {
+      "id": "issue-027",
+      "product": "자동차 내장재",
+      "component": "카펫 매트",
+      "issue": "냄새 문제",
+      "cause": "접착제 휘발성 성분",
+      "solution": "친환경 접착제 사용 및 에이징 처리",
+      "material_code": "MAT-TX-00803",
+      "material_class": "텍스타일",
+      "class_hierarchy": "원자재 > 섬유 > 텍스타일"
+    }
+  ]
+}
