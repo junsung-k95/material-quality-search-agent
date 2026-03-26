@@ -9,6 +9,7 @@ from material_quality_agent.api.schemas import (
     SearchResult,
     SimilarityBreakdown,
 )
+from material_quality_agent.config import settings
 from material_quality_agent.graph.pipeline import run_pipeline
 
 logging.basicConfig(level=logging.INFO)
@@ -19,7 +20,7 @@ app = FastAPI(title="Material Quality Search Agent", version="0.1.0")
 
 @app.get("/health")
 async def health():
-    return {"status": "ok"}
+    return {"status": "ok", "demo_mode": settings.demo_mode}
 
 
 @app.post("/search", response_model=SearchResponse)

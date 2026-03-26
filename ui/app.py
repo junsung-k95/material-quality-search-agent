@@ -9,6 +9,18 @@ API_BASE_URL = os.environ.get("API_BASE_URL", "http://localhost:8000")
 st.set_page_config(page_title="자재 품질 검색 에이전트", page_icon="🔎", layout="wide")
 st.title("🔎 자재 품질 검색 에이전트")
 
+# ── Demo-mode banner (shown when ANTHROPIC_API_KEY is not configured) ──────
+try:
+    _health = requests.get(f"{API_BASE_URL}/health", timeout=3)
+    if _health.ok and _health.json().get("demo_mode"):
+        st.warning(
+            "**데모 모드** — ANTHROPIC_API_KEY가 설정되지 않아 AI 분석 없이 벡터 유사도 기반으로 동작합니다. "
+            "실제 AI 해석을 사용하려면 환경변수 `ANTHROPIC_API_KEY`를 설정하세요.",
+            icon="⚠️",
+        )
+except requests.exceptions.RequestException:
+    pass  # API 서버 미기동 상태면 무시; 검색 버튼 클릭 시 별도 에러 표시
+
 query = st.text_input(
     "품질 문제를 입력하세요",
     placeholder="예: 대시보드 쪽에서 기포가 생김",

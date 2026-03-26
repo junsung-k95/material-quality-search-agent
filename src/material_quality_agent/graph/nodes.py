@@ -88,6 +88,24 @@ async def hybrid_rank_node(state: AgentState) -> dict:
     return {"ranked_results": ranked}
 
 
+def _explanation_fallback(state: AgentState) -> str:
+    """Template-based explanation used when ANTHROPIC_API_KEY is not set."""
+    ranked = state.get("ranked_results", [])
+    component = state.get("selected_component", "")
+    if not ranked:
+        return "관련된 품질 이슈를 찾을 수 없습니다."
+    top = ranked[0]
+    lines = [
+        f"[데모 모드] {component}의 주요 품질 문제는 '{top.get('issue', '')}'입니다.",
+        f"주요 원인은 '{top.get('cause', '')}'이며,",
+        f"해결 방안으로는 '{top.get('solution', '')}'이 권장됩니다.",
+    ]
+    if len(ranked) > 1:
+        others = "', '".join(r.get("issue", "") for r in ranked[1:3])
+        lines.append(f"추가적으로 '{others}' 문제도 보고된 바 있습니다.")
+    return " ".join(lines)
+
+
 async def generate_explanation_node(state: AgentState) -> dict:
     ranked_results = state.get("ranked_results", [])
     selected_component = state.get("selected_component", "")
@@ -95,6 +113,9 @@ async def generate_explanation_node(state: AgentState) -> dict:
 
     if not ranked_results:
         return {"explanation": "관련된 품질 이슈를 찾을 수 없습니다."}
+
+    if settings.demo_mode:
+        return {"explanation": _explanation_fallback(state)}
 
     top_issues_text = "\n".join(
         [

@@ -1,10 +1,21 @@
 import logging
+import re
 
 import anthropic
 
 from material_quality_agent.config import settings
 
 logger = logging.getLogger(__name__)
+
+# Korean particles / auxiliary words to strip when running without Claude
+_KO_STOPWORDS = {
+    "에서", "에서의", "에", "의", "을", "를", "이", "가", "은", "는", "도", "만",
+    "와", "과", "랑", "이랑", "로", "으로", "까지", "부터", "에서도",
+    "쪽", "쪽에서", "쪽의",
+    "생김", "발생", "발생함", "문제", "문제가", "됩니다", "합니다", "있어요",
+    "있습니다", "했", "하", "됐", "됩니다", "같아요", "같은", "같습니다",
+    "현상", "현상이",
+}
 
 EXTRACT_TOOL = {
     "name": "extract_entities",
@@ -23,7 +34,19 @@ EXTRACT_TOOL = {
 }
 
 
+def _extract_entities_fallback(query: str) -> list[str]:
+    """Deterministic entity extraction used when ANTHROPIC_API_KEY is not set.
+    Splits the query on whitespace/punctuation and removes Korean stopwords."""
+    tokens = re.split(r"[\s,./!?]+", query.strip())
+    terms = [t for t in tokens if t and t not in _KO_STOPWORDS and len(t) >= 2]
+    logger.info("demo_mode entity extraction: %s → %s", query, terms)
+    return terms if terms else [query.strip()]
+
+
 async def extract_entities(query: str) -> list[str]:
+    if settings.demo_mode:
+        return _extract_entities_fallback(query)
+
     client = anthropic.AsyncAnthropic(api_key=settings.anthropic_api_key)
     response = await client.messages.create(
         model=settings.anthropic_model,
